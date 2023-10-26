@@ -36,7 +36,7 @@ async def otvet(message: types.Message):
         a4 = types.KeyboardButton(text="Институт образования и гуманитарных наук")
         greet_kb.add(a1, a2, a3, a4)
 
-        await message.reply('Главное меню.',
+        await message.reply('Главное меню1.',
                             reply_markup=greet_kb)
 
 
