@@ -10,11 +10,11 @@ async def send_welcome(message: types.Message):
     bot.send_photo(message.chat.id, photo="https://sun9-12.userapi.com/impg/1zCF3IhajAXF4HEooMMDV-uwAlqLQ2dUBSTnAg/KKQXZRH10Qw.jpg?size=2560x1809&quality=95&sign=bfb1489f5c7cb60ed1bb7bde37ff77bf&type=album", caption='Всего в БФУ 4 научных кластера (института), а в них входит 13 Высших школ. Также есть университетский колледж, но он не относится к научным кластерам и ВШ.')
     greet_kb = ReplyKeyboardMarkup(row_width=1)
 
-    a1 = types.KeyboardButton(text="Институт управления и территориального развития")
-    a2 = types.KeyboardButton(text="Институт высоких технологий")
-    a3 = types.KeyboardButton(text="Институт медицины и науки о жизни (МЕДБИО)")
-    a4 = types.KeyboardButton(text="Институт образования и гуманитарных наук")
-    greet_kb.add(a1, a2, a3, a4)
+    button1 = types.KeyboardButton(text="Институт управления и территориального развития")
+    button2 = types.KeyboardButton(text="Институт высоких технологий")
+    button3 = types.KeyboardButton(text="Институт медицины и науки о жизни (МЕДБИО)")
+    button4 = types.KeyboardButton(text="Институт образования и гуманитарных наук")
+    greet_kb.add(button1, button2, button3, button4)
 @dp.message_handler()
 async def otvet(message: types.Message):
     if "Институт управления и территориального развития" in message.text:
@@ -30,11 +30,11 @@ async def otvet(message: types.Message):
 
     if "Назад" in message.text:
         greet_kb = ReplyKeyboardMarkup(row_width=1)
-        a1 = types.KeyboardButton(text="Институт управления и территориального развития")
-        a2 = types.KeyboardButton(text="Институт высоких технологий")
-        a3 = types.KeyboardButton(text="Институт медицины и науки о жизни (МЕДБИО)")
-        a4 = types.KeyboardButton(text="Институт образования и гуманитарных наук")
-        greet_kb.add(a1, a2, a3, a4)
+        button1 = types.KeyboardButton(text="Институт управления и территориального развития")
+        button2 = types.KeyboardButton(text="Институт высоких технологий")
+        button3 = types.KeyboardButton(text="Институт медицины и науки о жизни (МЕДБИО)")
+        button4 = types.KeyboardButton(text="Институт образования и гуманитарных наук")
+        greet_kb.add(button1, button2, button3, button4)
 
         await message.reply('Главное меню1.',
                             reply_markup=greet_kb)
